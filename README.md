@@ -106,3 +106,24 @@ GEMINI_CHAT_MODEL = "gemini-1.5-flash"
 # Can use any embedding model
 GEMINI_EMBEDDING_MODEL = "models/text-embedding-004"
 ```
+
+📁 Trained Model Files
+The following notebooks contain the training code for the logistic regression and xNN (explainable neural network) models:
+
+Models_trained/LLM_Xgboost.ipynb
+
+📁 Data Preprocessing & Feature Engineering
+You can find the preprocessing and feature engineering steps in the following file:
+
+data/Data_preprocessing_and_Features-generation_22-23.ipynb
+
+⚠️ Note on Data Availability
+The feature engineering and preprocessing code was run on the full dataset, which is stored locally due to privacy constraints. To respect data privacy, the full dataset is not uploaded to GitHub.
+
+However, we have provided a sample consisting of one match per season, which includes:
+
+df_passes.csv (event data)
+
+tracking.csv (tracking data)
+
+These files are located in the data/ folder for reproducibility and reference.
