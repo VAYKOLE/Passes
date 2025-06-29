@@ -1940,36 +1940,36 @@ class PassContributionPlot_XGBoost(DistributionPlot_XGBoost):
     
         
 
-#class CounterfactualContributionPlot_XGBoost:
-#    def __init__(self, shap_df_long):
-#        self.df = shap_df_long.sort_values("shap_value", key=abs, ascending=True)  # sort by abs SHAP
+class CounterfactualContributionPlot_XGBoost:
+    def __init__(self, shap_df_long):
+        self.df = shap_df_long.sort_values("shap_value", key=abs, ascending=True)  # sort by abs SHAP
 
-#    def plot(self, title="XGBoost SHAP Contributions for Counterfactual Pass"):
-#        fig = go.Figure()
-#
-#        fig.add_trace(go.Bar(
-#            x=self.df["shap_value"],
-#            y=self.df["feature"],
-#            orientation="h",
-#            marker_color="green",
-#            text=[f"{v:.2f}" for v in self.df["feature_value"]],
-#            textposition="auto",
-#            hovertemplate=
-#                "<b>%{y}</b><br>" +
-#                "SHAP Value: %{x:.4f}<br>" +
-#                "Feature Value: %{text}<extra></extra>",
-#            name="Counterfactual"
-#        ))
+    def plot(self, title="XGBoost SHAP Contributions for Counterfactual Pass"):
+        fig = go.Figure()
 
-#        fig.update_layout(
-#            title=title,
-#            xaxis_title="SHAP Value (Impact on xT)",
-#            yaxis_title="Feature",
-#            height=600,
-#            template="plotly_white"
-#        )
+        fig.add_trace(go.Bar(
+            x=self.df["shap_value"],
+            y=self.df["feature"],
+            orientation="h",
+            marker_color="green",
+            text=[f"{v:.2f}" for v in self.df["feature_value"]],
+            textposition="auto",
+            hovertemplate=
+                "<b>%{y}</b><br>" +
+                "SHAP Value: %{x:.4f}<br>" +
+                "Feature Value: %{text}<extra></extra>",
+            name="Counterfactual"
+        ))
 
-#        return fig    
+        fig.update_layout(
+            title=title,
+            xaxis_title="SHAP Value (Impact on xT)",
+            yaxis_title="Feature",
+            height=600,
+            template="plotly_white"
+        )
+
+        return fig    
 
 
 class PassContributionPlot_Mimic(DistributionPlot):
