@@ -995,7 +995,7 @@ class Passes(Data):
 
         # ✅ EARLY EXIT before doing anything with DiCE
         if pred_prob > threshold:
-            return pd.DataFrame(), pred_prob
+            return pd.DataFrame(), pred_prob, pd.DataFrame()
 
         # ✅ Now safe to create DiCE objects
         data_dice = dice_ml.Data(
